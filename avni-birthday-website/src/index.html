@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Avni!</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts for premium look -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="main-navigation">
+        <div id="my-name"><span class="logo">🎉</span> Avni's Birthday</div>
+        <nav>
+            <ul class="nav-list">
+                <li class="nav-item"><a href="#welcome">Home</a></li>
+                <li class="nav-item"><a href="#gallery">Gallery</a></li>
+                <li class="nav-item"><a href="#events">Events</a></li>
+                <li class="nav-item"><a href="#rsvp">RSVP</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Happy Birthday, Avni!</h1>
+            <p class="hero-subtitle">A magical day for a magical friend</p>
+            <div id="countdown" class="countdown"></div>
+            <a href="#rsvp" class="btn-premium">RSVP Now</a>
+            <p class="hero-wish">“May your birthday be as wonderful and bright as you are!”</p>
+        </div>
+        <div class="balloons">
+            <div class="balloon"></div>
+            <div class="balloon"></div>
+            <div class="balloon"></div>
+        </div>
+        <div id="threejs-cake"></div>
+        <div id="floating-wishes"></div>
+    </section>
+    <section id="birthday-letter" class="section-premium birthday-letter">
+        <h2>Dear Avni,</h2>
+        <p>
+            Wishing you the happiest birthday, my dearest best friend! 🎂<br>
+            You light up every room with your smile and kindness. Thank you for being my partner in crime, my confidant, and my endless source of laughter.<br>
+            May your year ahead be filled with love, adventure, and all your dreams coming true.<br>
+            <br>
+            With all my love,<br>
+            [Your Name]
+        </p>
+    </section>
+    <main>
+        <section id="welcome" class="section-premium">
+            <h2>Join us to celebrate Avni's special day!</h2>
+            <p><strong>Date:</strong> [Insert Date]</p>
+            <p><strong>Time:</strong> [Insert Time]</p>
+            <p><strong>Location:</strong> [Insert Location]</p>
+        </section>
+        <section id="gallery" class="section-premium">
+            <h2>Memorable Moments</h2>
+            <div class="gallery-grid">
+                <img src="path/to/image1.jpg" alt="Birthday Celebration 1">
+                <img src="path/to/image2.jpg" alt="Birthday Celebration 2">
+                <!-- Add more images as needed -->
+            </div>
+        </section>
+        <section id="events" class="section-premium">
+            <h2>Event Details</h2>
+            <ul>
+                <li>🎲 Games and Activities</li>
+                <li>🎂 Cake Cutting Ceremony</li>
+                <li>🎁 Gift Opening</li>
+            </ul>
+        </section>
+        <section id="rsvp" class="section-premium">
+            <h2>RSVP</h2>
+            <form class="rsvp-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <button type="submit" class="btn-premium">Confirm Attendance</button>
+            </form>
+        </section>
+        <!-- Wishes Modal -->
+        <div id="wishModal" class="wish-modal">
+          <div class="wish-modal-content">
+            <span class="close-modal" id="closeWishModal">&times;</span>
+            <h2>Send Avni a Birthday Wish!</h2>
+            <form id="wishForm">
+              <input type="text" id="wishName" placeholder="Your Name" maxlength="20" required>
+              <textarea id="wishText" placeholder="Your Wish" maxlength="120" required></textarea>
+              <button type="submit" class="btn-premium creative-btn">Send Wish 🎈</button>
+            </form>
+          </div>
+        </div>
+    
+        <!-- Wishes Display -->
+        <section id="wishes-section" class="section-premium wishes-section">
+          <h2>Birthday Wishes for Avni</h2>
+          <ul id="wishesList"></ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Avni's Birthday Celebration | Made with ❤️ for Avni</p>
+    </footer>
+    <!-- Three.js for 3D cake (to be implemented in script.js) -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.153.0/build/three.min.js"></script>
+    <script src="script.js"></script>
+    <a href="#" id="openWishModal" class="btn-premium creative-btn">Send a Wish ✨</a>
+</body>
+</html>
