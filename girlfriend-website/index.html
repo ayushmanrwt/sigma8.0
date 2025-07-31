@@ -7,18 +7,98 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        /* Updated Color Palette */
+        body {
+            background: linear-gradient(to right, #fbc2eb, #a6c1ee); /* Soft pastel gradient */
+            color: #444; /* Neutral text color */
+        }
+
+        header {
+            background: linear-gradient(to right, #ff9a9e, #fad0c4); /* Warm gradient */
+            color: #fff; /* White text for contrast */
+        }
+
+        footer {
+            background: linear-gradient(to right, #a1c4fd, #c2e9fb); /* Cool gradient */
+            color: #333; /* Darker text for readability */
+        }
+
+        /* Section Backgrounds */
+        section {
+            background: linear-gradient(to right, #fdfbfb, #ebedee); /* Subtle gradient */
+            border: 1px solid #ddd; /* Light border for definition */
+        }
+
+        /* Typography Improvements */
+        h1, h2 {
+            color: #ff6f91; /* Vibrant pink for headings */
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+        }
+
+        p {
+            color: #555; /* Softer text color */
+            line-height: 1.8; /* Improved readability */
+        }
+
+        /* Button Styles */
+        button {
+            background: linear-gradient(to right, #ff758c, #ff7eb3); /* Gradient button */
+            color: #fff; /* White text */
+            border: none;
+            border-radius: 5px;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        button:hover {
+            background: linear-gradient(to right, #ff4c81, #ff6f91); /* Darker gradient on hover */
+            transform: translateY(-3px);
+        }
+
+        /* Gallery Image Hover Effect */
+        .image-gallery img {
+            border: 2px solid #ff6f91; /* Pink border */
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+        }
+
+        .image-gallery img:hover {
+            transform: scale(1.1) rotate(3deg);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Shadow and Spacing */
+        section {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            padding: 2rem;
+        }
+
+        /* Banner Enhancements */
+        .banner {
+            background: linear-gradient(to right, rgba(255, 154, 158, 0.8), rgba(250, 208, 196, 0.8)), url('assets/IMG-20250710-WA0166.jpg') center/cover no-repeat; /* Gradient overlay */
+            color: #fff; /* White text for contrast */
+            border-bottom: none; /* Removed any border or line below the banner */
+        }
+
+        .banner h1 {
+            font-size: 4.5rem; /* Larger font size */
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Stronger shadow */
+        }
+
+        .banner blockquote {
+            font-size: 2.2rem; /* Slightly larger quote */
+            color: #fdfdfd; /* Softer white */
+        }
         body {
             font-family: 'Playfair Display', serif;
             margin: 0;
             padding: 0;
             background: linear-gradient(to right, #ff9a9e, #fad0c4); /* Change background to pink gradient */
             color: #333;
-            overflow-x: hidden; /* Remove horizontal scroll */
         }
-        header, main, footer {
-            padding: 0 1rem;
-        }
-
         header {
             text-align: center;
             padding: 2rem;
@@ -247,144 +327,72 @@
             margin-top: 1rem;
             line-height: 1.5;
         }
-        /* Removed top corner gallery and video sections */
-        /* Additional sections */
-        .new-section {
-            padding: 2rem;
-            margin: 2rem auto;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            animation: fadeIn 2s ease-in-out;
+        /* Added interactive starfield with parallax effect */
+        body {
+            perspective: 1000px; /* Enable 3D perspective */
+            background: #000; /* Black background for star visibility */
+            overflow: hidden; /* Prevent scrollbars */
         }
 
-        .new-section h2 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
         }
 
-        .new-section p {
-            font-size: 1.2rem;
-            line-height: 1.8;
-            color: #333;
-        }
-        /* Top right corner icons for gallery and video */
-        .top-icons {
-            position: fixed;
-            top: 1rem;
-            right: 1rem;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            z-index: 1000;
-        }
-
-        .top-icons a {
-            width: 50px;
-            height: 50px;
-            background: rgba(255, 255, 255, 0.9);
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
-            text-decoration: none;
-            color: #333;
-            font-size: 1.5rem;
-            font-weight: bold;
-            transition: transform 0.3s, box-shadow 0.3s;
-            perspective: 1000px;
+            animation: twinkling 5s infinite ease-in-out;
         }
 
-        .top-icons a:hover {
-            transform: scale(1.1) rotateX(15deg) rotateY(15deg);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3), 0 12px 30px rgba(0, 0, 0, 0.25);
+        @keyframes twinkling {
+            0% { transform: translateZ(0) rotate(0deg); opacity: 1; }
+            50% { transform: translateZ(500px) rotate(180deg); opacity: 0.5; }
+            100% { transform: translateZ(0) rotate(360deg); opacity: 1; }
         }
 
-        .top-icons a.gallery-icon {
-            background: linear-gradient(to right, #4facfe, #00f2fe);
+        /* Custom cursor */
+        body {
+            cursor: url('assets/custom-cursor.png'), auto; /* Replace with your custom cursor image */
+        }
+
+        /* Floating hearts */
+        @keyframes float {
+            0% { transform: translateY(0); opacity: 1; }
+            50% { transform: translateY(-20px); opacity: 0.8; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        .heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: red;
+            clip-path: polygon(50% 0%, 100% 35%, 80% 100%, 50% 80%, 20% 100%, 0% 35%);
+            animation: float 3s infinite ease-in-out;
+        }
+
+        /* Easter egg */
+        .hidden-message {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.8);
             color: white;
-            box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.5), 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .top-icons a.video-icon {
-            background: linear-gradient(to right, #ff758c, #ff7eb3);
-            color: white;
-            box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.5), 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .about {
             padding: 2rem;
-            margin: 2rem auto;
-            background: linear-gradient(135deg, #6a11cb, #2575fc); /* Updated gradient background */
-            border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            animation: fadeIn 2s ease-in-out;
-            border: 2px solid transparent;
-            background-clip: padding-box;
-            position: relative;
-        }
-
-        .about h2 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-            color: #fff; /* Updated text color */
-        }
-
-        .about p {
-            font-size: 1.2rem;
-            line-height: 1.8;
-            color: #f0f0f0; /* Updated text color */
-        }
-
-        .hidden {
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
-        }
-
-        .visible {
-            opacity: 1;
-            visibility: visible;
-            transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
-        }
-
-        @media (max-width: 768px) {
-            .banner h1 {
-                font-size: 2.5rem; /* Adjust font size for smaller screens */
-            }
-
-            .banner blockquote.quote {
-                font-size: 1.5rem; /* Adjust font size for smaller screens */
-            }
-
-            .image-gallery {
-                gap: 1rem; /* Reduce gap for smaller screens */
-            }
-
-            footer {
-                font-size: 0.9rem; /* Adjust footer text size */
-            }
-        }
-
-        @media (max-width: 480px) {
-            .banner {
-                padding: 1rem; /* Reduce padding for very small screens */
-            }
-
-            .banner h1 {
-                font-size: 2rem; /* Further adjust font size */
-            }
-
-            .banner blockquote.quote {
-                font-size: 1.2rem; /* Further adjust font size */
-            }
-
-            .image-gallery {
-                grid-template-columns: 1fr; /* Single column for very small screens */
-            }
+            border-radius: 10px;
+            text-align: center;
+            z-index: 1000;
         }
     </style>
 </head>
@@ -488,9 +496,69 @@
                     img.style.transform = 'scale(1) rotate(0deg)';
                 });
             });
+
+            // Add fade-in effect on scroll
+            const sections = document.querySelectorAll('section');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            sections.forEach(section => {
+                section.classList.add('fade-in');
+                observer.observe(section);
+            });
         });
         document.addEventListener('DOMContentLoaded', () => {
             console.log('Welcome to My Dear Bunnu!');
+        });
+        /* Added interactive starfield with parallax, custom cursor, floating hearts, and an Easter egg that displays a hidden message after 5 clicks. */
+        document.addEventListener('DOMContentLoaded', () => {
+            // Generate stars
+            const starContainer = document.createElement('div');
+            starContainer.classList.add('stars');
+            document.body.appendChild(starContainer);
+
+            for (let i = 0; i < 100; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star');
+                star.style.top = `${Math.random() * 100}%`;
+                star.style.left = `${Math.random() * 100}%`;
+                star.style.animationDuration = `${Math.random() * 5 + 3}s`;
+                star.style.animationDelay = `${Math.random() * 5}s`;
+                starContainer.appendChild(star);
+            }
+
+            // Floating hearts
+            for (let i = 0; i < 20; i++) {
+                const heart = document.createElement('div');
+                heart.classList.add('heart');
+                heart.style.top = `${Math.random() * 100}%`;
+                heart.style.left = `${Math.random() * 100}%`;
+                heart.style.animationDuration = `${Math.random() * 3 + 2}s`;
+                document.body.appendChild(heart);
+            }
+
+            // Easter egg
+            let clickCount = 0;
+            const hiddenMessage = document.createElement('div');
+            hiddenMessage.classList.add('hidden-message');
+            hiddenMessage.textContent = 'You found the hidden message! ❤️';
+            document.body.appendChild(hiddenMessage);
+
+            document.body.addEventListener('click', () => {
+                clickCount++;
+                if (clickCount === 5) {
+                    hiddenMessage.style.display = 'block';
+                    setTimeout(() => {
+                        hiddenMessage.style.display = 'none';
+                    }, 3000);
+                }
+            });
         });
     </script>
 </body>
