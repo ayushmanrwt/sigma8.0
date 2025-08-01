@@ -1,0 +1,275 @@
+body {
+    font-family: 'Playfair Display', serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    overflow-x: hidden;
+    background: linear-gradient(to right, #1e3c72, #2a5298); /* Premium gradient background */
+    background-attachment: fixed;
+    animation: gradientShift 10s ease infinite; /* Added subtle animation */
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+header {
+    background: linear-gradient(to right, #4facfe, #00f2fe); /* Updated gradient */
+    color: white;
+    text-align: center;
+    padding: 3rem 0;
+    font-family: 'Great Vibes', cursive;
+    font-size: 3.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    border-bottom: 5px solid #c3e6cb; /* Changed border to light green */
+    animation: fadeIn 2s ease-in-out;
+}
+
+header h1 {
+    font-size: 4rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    animation: pulse 3s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+main {
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    margin: 2rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.about, .journey {
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    padding: 2rem;
+    margin: 2rem auto;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    max-width: 800px;
+    color: white;
+    text-align: center;
+    animation: slideIn 1.5s ease;
+}
+
+.about h2, .journey h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.about p, .journey p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    letter-spacing: 0.5px;
+}
+
+.top-icons {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    z-index: 1000;
+}
+
+.top-icons a {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(to right, #ff758c, #ff7eb3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.top-icons a:hover {
+    transform: scale(1.2);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Add hover effects and transitions for buttons and links */
+button, a {
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    background: linear-gradient(to right, #4facfe, #00f2fe);
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button:hover, a:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Add decorative dividers */
+section h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #ff9a9e;
+    margin: 10px auto;
+    border-radius: 5px;
+}
+
+/* Custom font style for CHUT and CHUTAR */
+.custom-font {
+    font-family: 'Great Vibes', cursive;
+    font-weight: 700;
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: #2d572c; /* Dark green */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    margin-bottom: 1rem;
+}
+
+/* Enhance the footer */
+footer {
+    background: linear-gradient(to right, #4facfe, #00f2fe); /* Updated gradient */
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+    font-size: 1rem;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+    border-top: 5px solid #00f2fe; /* Added border */
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Style for the video section */
+#video-section {
+    text-align: center;
+    margin: 50px 0;
+}
+
+#video-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+#background-video {
+    width: 80%;
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Style for the new image section */
+#image-section {
+    text-align: center;
+    margin: 50px 0;
+}
+
+#image-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.image-gallery img {
+    width: 200px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.image-gallery img:hover {
+    transform: scale(1.1);
+}
+
+/* Removed the top corner decorative element */
+.top-corner {
+    display: none;
+}
+
+/* Add decorative background elements */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255,255,255,0.2) 20%, transparent 80%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Add card-like design for sections */
+section {
+    background: linear-gradient(135deg, #ff758c, #ff7eb3); /* Premium gradient */
+    padding: 2rem;
+    margin: 2rem auto;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    max-width: 800px;
+    color: white;
+    text-align: center;
+    animation: slideIn 1.5s ease;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    body {
+        font-size: 90%;
+    }
+
+    .photos img {
+        max-width: 200px;
+    }
+}
