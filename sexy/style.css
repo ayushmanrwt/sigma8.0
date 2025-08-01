@@ -272,15 +272,4 @@ section {
     .photos img {
         max-width: 200px;
     }
-
-    /* Reduce video size similar to image gallery */
-    .animated-video {
-        max-width: 200px !important;
-        height: auto !important;
-    }
-
-    .banner video {
-        max-width: 90% !important;
-        height: auto !important;
-    }
 }
