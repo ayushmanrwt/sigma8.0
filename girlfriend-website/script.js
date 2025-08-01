@@ -41,7 +41,7 @@ images.forEach(img => {
 
 // Add background video playback control
 const videoBackground = document.createElement('video');
-videoBackground.src = 'assets/VID-20250712-WA0032.mp4';
+videoBackground.src = 'assets/VID-20250712-WA0043.mp4';
 videoBackground.autoplay = true;
 videoBackground.loop = true;
 videoBackground.muted = true;
