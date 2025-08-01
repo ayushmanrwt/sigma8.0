@@ -1,711 +1,525 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Chtaak Londe</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto:wght@400;700&family=Playfair+Display:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <style>
-        /* Updated Color Palette */
-        body {
-            background: linear-gradient(to right, #a8e063, #56ab2f); /* Green gradient */
-            color: #333; /* Neutral text color */
-        }
+      /* Updated Color Palette */
+      body {
+        background: linear-gradient(to right, #a8e063, #56ab2f); /* Green gradient */
+        color: #333; /* Neutral text color */
+      }
 
-        header {
-            text-align: center;
-            padding: 2rem;
-            background: linear-gradient(to right, #e9f5e9, #d4edda); /* Light green gradient matching About Us */
-            color: white;
-            font-family: 'Great Vibes', cursive;
-            font-size: 3rem;
-            animation: fadeInSlide 2s ease-in-out; /* Fade-in and slide effect */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-        }
+      header {
+        text-align: center;
+        padding: 2rem;
+        background: linear-gradient(to right, #e9f5e9, #d4edda); /* Light green gradient matching About Us */
+        color: white;
+        font-family: "Great Vibes", cursive;
+        font-size: 3rem;
+        animation: fadeInSlide 2s ease-in-out; /* Fade-in and slide effect */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+      }
 
-        @keyframes fadeInSlide {
-            0% {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
+      @keyframes fadeInSlide {
+        0% {
+          opacity: 0;
+          transform: translateY(-20px);
         }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
 
-        footer {
-            background: linear-gradient(to right, #56ab2f, #a8e063); /* Green gradient */
-            color: white;
-            font-size: 1rem;
-        }
+      footer {
+        background: linear-gradient(to right, #e9f5e9, #d4edda); /* Changed footer background to About Us background color */
+        color: white;
+        font-size: 1rem;
+      }
 
-        section {
-            background: linear-gradient(to right, #e9f5e9, #d4edda); /* Light green gradient */
-            border: 1px solid #c3e6cb; /* Light border for definition */
-        }
+      section {
+        background: linear-gradient(to right, #e9f5e9, #d4edda); /* Light green gradient */
+        border: 1px solid #c3e6cb; /* Light border for definition */
+      }
 
-        h1, h2 {
-            color: #2d572c; /* Dark green for headings */
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-        }
+      h1,
+      h2 {
+        color: #2d572c; /* Dark green for headings */
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+      }
 
-        p {
-            color: #4f7942; /* Softer green text color */
-            line-height: 1.8; /* Improved readability */
-        }
+      p {
+        color: #4f7942; /* Softer green text color */
+        line-height: 1.8; /* Improved readability */
+      }
 
-        button {
-            background: linear-gradient(to right, #56ab2f, #a8e063); /* Green gradient button */
-            color: #fff; /* White text */
-            border: none;
-            border-radius: 5px;
-            padding: 0.75rem 1.5rem;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background 0.3s ease, transform 0.3s ease;
-        }
+      button {
+        background: linear-gradient(to right, #56ab2f, #a8e063); /* Green gradient button */
+        color: #fff; /* White text */
+        border: none;
+        border-radius: 5px;
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background 0.3s ease, transform 0.3s ease;
+      }
 
-        button:hover {
-            background: linear-gradient(to right, #3e8e41, #56ab2f); /* Darker green gradient on hover */
-            transform: translateY(-3px);
-        }
+      button:hover {
+        background: linear-gradient(to right, #3e8e41, #56ab2f); /* Darker green gradient on hover */
+        transform: translateY(-3px);
+      }
 
-        .image-gallery img {
-            border: 2px solid #2d572c; /* Green border */
-            transition: transform 0.5s ease, box-shadow 0.5s ease;
-        }
+      .image-gallery img {
+        border: 2px solid #2d572c; /* Green border */
+        transition: transform 0.5s ease, box-shadow 0.5s ease;
+      }
 
-        .image-gallery img:hover {
-            transform: scale(1.1) rotate(3deg);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-        }
+      .image-gallery img:hover {
+        transform: scale(1.1) rotate(3deg);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      }
 
-        /* Banner Enhancements */
-        .banner {
-            background: linear-gradient(to right, rgba(255, 154, 158, 0.8), rgba(250, 208, 196, 0.8)), url('assets/IMG-20250710-WA0166.jpg') center/cover no-repeat; /* Gradient overlay */
-            color: #fff; /* White text for contrast */
-            border-bottom: none; /* Removed any border or line below the banner */
-        }
+      /* Banner Enhancements */
+      .banner {
+        position: relative;
+        overflow: hidden;
+        background: url("assets/IMG-20250710-WA0166.jpg") center/cover no-repeat; /* Set background image */
+        padding: 5rem; /* Increased padding for bigger banner */
+        border-radius: 30px;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin: 2rem auto; /* Center the banner */
+        max-width: 95%; /* Increased max-width for wider banner */
+      }
 
-        .banner h1 {
-            font-size: 4.5rem; /* Larger font size */
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Stronger shadow */
-        }
+      .banner::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.4); /* Subtle overlay for better text readability */
+        z-index: 0;
+      }
 
-        .banner blockquote {
-            font-size: 2.2rem; /* Slightly larger quote */
-            color: #fdfdfd; /* Softer white */
-        }
-        body {
-            font-family: 'Playfair Display', serif;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(to right, #e9f5e9, #d4edda); /* Change background to About Us background color */
-            color: #333;
-        }
-        header {
-            text-align: center;
-            padding: 2rem;
-            background: linear-gradient(to right, #e9f5e9, #d4edda); /* Light green gradient matching About Us */
-            color: white;
-            font-family: 'Great Vibes', cursive;
-            font-size: 3rem;
-            animation: fadeInSlide 2s ease-in-out; /* Fade-in and slide effect */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-        }
+      .banner video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: blur(3px) brightness(0.8); /* Adjusted blur and brightness */
+        z-index: -1;
+      }
 
-        .header-title {
-            font-size: 2.5rem;
-            color: #ff6f91; /* Vibrant pink */
-            font-family: 'Great Vibes', cursive;
-            margin-bottom: 1rem;
-            animation: fadeIn 2s ease-in-out;
-        }
+      .banner-content {
+        position: relative;
+        z-index: 1;
+        animation: fadeIn 2s ease-in-out; /* Smooth fade-in animation */
+      }
 
-        .banner {
-            position: relative;
-            overflow: hidden;
-            background: url('assets/IMG-20250710-WA0166.jpg') center/cover no-repeat; /* Set background image */
-            padding: 5rem; /* Increased padding for bigger banner */
-            border-radius: 30px;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            margin: 2rem auto; /* Center the banner */
-            max-width: 95%; /* Increased max-width for wider banner */
-        }
+      .banner h1 {
+        font-size: 5rem; /* Increased font size for bigger banner text */
+        margin-bottom: 1rem;
+        font-family: "Great Vibes", cursive;
+        background: linear-gradient(to right, #e9f5e9, #d4edda); /* Light green gradient */
+        background-clip: text; /* Standard property for compatibility */
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent; /* Gradient text effect */
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      }
 
-        .banner::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.4); /* Subtle overlay for better text readability */
-            z-index: 0;
-        }
+      .banner blockquote.quote {
+        font-size: 2rem;
+        color: #fff;
+        font-family: "Playfair Display", serif;
+        background-clip: text; /* Standard property for compatibility */
+        -webkit-background-clip: text;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        margin-top: 1rem;
+        line-height: 1.5;
+      }
+      /* 3D Animated Background */
+      .animated-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        overflow: hidden;
+        background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      }
 
-        .banner video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: blur(3px) brightness(0.8); /* Adjusted blur and brightness */
-            z-index: -1;
-        }
+      .animated-background .cube {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        background: rgba(255, 255, 255, 0.2);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        animation: float 10s infinite ease-in-out;
+      }
 
-        .banner-content {
-            position: relative;
-            z-index: 1;
-            animation: fadeIn 2s ease-in-out; /* Smooth fade-in animation */
+      @keyframes float {
+        0% {
+          transform: translateY(0) rotate(0deg);
         }
+        50% {
+          transform: translateY(-50px) rotate(180deg);
+        }
+        100% {
+          transform: translateY(0) rotate(360deg);
+        }
+      }
+      /* 3D Video Background */
+      .video-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        overflow: hidden;
+      }
 
-        .banner h1 {
-            font-size: 5rem; /* Increased font size for bigger banner text */
-            margin-bottom: 1rem;
-            font-family: 'Great Vibes', cursive;
-            background: linear-gradient(to right, #e9f5e9, #d4edda); /* Light green gradient */
-            background-clip: text; /* Standard property for compatibility */
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent; /* Gradient text effect */
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
+      .video-background video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(1.2);
+        width: 100%;
+        height: auto;
+        min-width: 100%;
+        min-height: 100%;
+        object-fit: cover;
+        filter: blur(3px) brightness(0.7);
+      }
 
-        .banner blockquote.quote {
-            font-size: 2rem;
-            color: #fff;
-            font-family: 'Playfair Display', serif;
-            background-clip: text; /* Standard property for compatibility */
-            -webkit-background-clip: text;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            margin-top: 1rem;
-            line-height: 1.5;
-        }
-    }
+      .navbar {
+        position: sticky;
+        top: 0;
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(10px);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+        z-index: 1000;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
 
-        @media (max-width: 768px) {
-            .banner {
-                padding: 1.5rem;
-                max-width: 95%;
-            }
-            .banner h1 {
-                font-size: 2.5rem;
-            }
-            .banner blockquote.quote {
-                font-size: 1.2rem;
-            }
-            .banner video {
-                height: auto;
-            }
-            .video-gallery video.animated-video {
-                width: 100%;
-                height: auto;
-            }
-            main {
-                margin: 1rem;
-                padding: 1rem;
-            }
-            .navbar a {
-                display: none;
-            }
-            .hamburger {
-                display: flex;
-            }
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        h2 {
-            font-family: 'Roboto', sans-serif;
-            font-weight: 700;
-        }
-        p {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.2rem;
-            line-height: 1.6;
-        }
-        .quote {
-            font-style: italic;
-            margin-top: 1rem;
-            font-family: 'Great Vibes', cursive;
-            font-size: 1.5rem;
-        }
-        .photos img {
-            width: 100%;
-            max-width: 300px;
-            border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s;
-        }
-        .photos img:hover {
-            transform: scale(1.1);
-        }
-        footer {
-            text-align: center;
-            padding: 1rem;
-            background: #4facfe; /* Updated footer background to match blue theme */
-            color: white;
-            font-size: 1rem;
-        }
-        #video-section {
-            text-align: center;
-            margin: 2rem 0;
-            padding: 2rem;
-            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-            border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-        #background-video {
-            max-width: 100%;
-            height: auto;
-            border-radius: 15px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-            border: 5px solid transparent;
-            background-clip: padding-box;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
+      .navbar a {
+        text-decoration: none;
+        color: #2d572c;
+        margin: 0 1rem;
+        font-weight: bold;
+        transition: color 0.3s;
+      }
 
-        #background-video:hover {
-            transform: scale(1.05);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
-        }
+      .navbar a:hover {
+        color: #56ab2f;
+      }
 
-        .image-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-            padding: 2rem;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+      }
 
-        .image-gallery img {
-            width: 100%;
-            border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
+      .hamburger div {
+        width: 25px;
+        height: 3px;
+        background: #2d572c;
+        margin: 3px 0;
+        transition: all 0.3s;
+      }
 
-        .image-gallery img:hover {
-            transform: scale(1.1) rotate(3deg);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-        }
-        /* Enhanced styles for the banner */
-        .banner {
-            position: relative;
-            overflow: hidden;
-            background: url('assets/IMG-20250710-WA0166.jpg') center/cover no-repeat; /* Set background image */
-            padding: 3rem; /* Adjusted padding for better spacing */
-            border-radius: 30px;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            margin: 2rem auto; /* Center the banner */
-            max-width: 90%; /* Limit the width for better layout */
-        }
-  
-        .banner::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.4); /* Subtle overlay for better text readability */
-            z-index: 0;
-        }
-
-        .banner video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: blur(3px) brightness(0.8); /* Adjusted blur and brightness */
-            z-index: -1;
-        }
-
-        .banner-content {
-            position: relative;
-            z-index: 1;
-            animation: fadeIn 2s ease-in-out; /* Smooth fade-in animation */
-        }
-
-        .banner h1 {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-            font-family: 'Great Vibes', cursive;
-            background: linear-gradient(to right, #e9f5e9, #d4edda); /* Light green gradient */
-            background-clip: text; /* Standard property for compatibility */
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent; /* Gradient text effect */
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        .banner blockquote.quote {
-            font-size: 2rem;
-            color: #fff;
-            font-family: 'Playfair Display', serif;
-            background-clip: text; /* Standard property for compatibility */
-            -webkit-background-clip: text;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            margin-top: 1rem;
-            line-height: 1.5;
-        }
-        /* 3D Animated Background */
-        .animated-background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            overflow: hidden;
-            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-        }
-
-        .animated-background .cube {
-            position: absolute;
-            width: 50px;
-            height: 50px;
-            background: rgba(255, 255, 255, 0.2);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            animation: float 10s infinite ease-in-out;
-        }
-
-        @keyframes float {
-            0% {
-                transform: translateY(0) rotate(0deg);
-            }
-            50% {
-                transform: translateY(-50px) rotate(180deg);
-            }
-            100% {
-                transform: translateY(0) rotate(360deg);
-            }
-        }
-        /* 3D Video Background */
-        .video-background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            overflow: hidden;
-        }
-
-        .video-background video {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(1.2);
-            width: 100%;
-            height: auto;
-            min-width: 100%;
-            min-height: 100%;
-            object-fit: cover;
-            filter: blur(3px) brightness(0.7);
-        }
-
-        .navbar {
-            position: sticky;
-            top: 0;
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(10px);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 2rem;
-            z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
+      @media (max-width: 768px) {
         .navbar a {
-            text-decoration: none;
-            color: #2d572c;
-            margin: 0 1rem;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-
-        .navbar a:hover {
-            color: #56ab2f;
+          display: none;
         }
 
         .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
+          display: flex;
         }
+      }
+      .animated-video {
+        border-radius: 15px;
+        box-shadow: 0 0 15px #56ab2f;
+        animation: pulseGlow 2s infinite;
+        transition: box-shadow 0.3s ease;
+      }
 
-        .hamburger div {
-            width: 25px;
-            height: 3px;
-            background: #2d572c;
-            margin: 3px 0;
-            transition: all 0.3s;
-        }
+      .animated-video.paused {
+        animation-play-state: paused;
+        box-shadow: none;
+      }
 
-        @media (max-width: 768px) {
-            .navbar a {
-                display: none;
-            }
-
-            .hamburger {
-                display: flex;
-            }
+      @keyframes pulseGlow {
+        0% {
+          box-shadow: 0 0 10px #56ab2f;
         }
-        .animated-video {
-            border-radius: 15px;
-            box-shadow: 0 0 15px #56ab2f;
-            animation: pulseGlow 2s infinite;
-            transition: box-shadow 0.3s ease;
+        50% {
+          box-shadow: 0 0 20px #a8e063;
         }
-
-        .animated-video.paused {
-            animation-play-state: paused;
-            box-shadow: none;
+        100% {
+          box-shadow: 0 0 10px #56ab2f;
         }
-
-        @keyframes pulseGlow {
-            0% {
-                box-shadow: 0 0 10px #56ab2f;
-            }
-            50% {
-                box-shadow: 0 0 20px #a8e063;
-            }
-            100% {
-                box-shadow: 0 0 10px #56ab2f;
-            }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <div class="banner visible" style="background: url('assets/Screenshot_2025-01-12-09-29-48-371_com.instagram.android.jpg') center/cover no-repeat;">
-            <video autoplay muted loop>
-                <source src="assets/VID-20250712-WA0022 (online-video-cutter.com).mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="banner-content">
-                <h1>Chtaak Londe</h1>
-            </div>
+      <div
+        class="banner visible"
+        style="background: url('assets/Screenshot_2025-01-12-09-29-48-371_com.instagram.android.jpg') center/cover no-repeat;"
+      >
+        <video autoplay muted loop>
+          <source
+            src="assets/VID-20250712-WA0022 (online-video-cutter.com).mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </video>
+        <div class="banner-content">
+          <h1>Chtaak Londe</h1>
         </div>
+      </div>
     </header>
     <div id="scroll-indicator"></div>
     <!-- Removed navbar hamburger menu, video gallery section, footer quote, and hidden message Easter egg as per user request -->
-    
+
     <main>
-        <section class="about hidden" style="background: linear-gradient(to right, #e9f5e9, #d4edda);">
-            <h2>About Us</h2>
-            <p>Welcome to the world of Chtaak Londe! We are a group of inseparable friends who share laughter, adventures, and countless memories. This page is dedicated to celebrating our bond and the moments that make life special.</p>
-        </section>
-        <section id="photo-gallery">
-            <h2>Photo Gallery</h2>
-            <div class="image-gallery">
-                <img src="assets/IMG-20241130-WA0024.jpg" alt="Photo 2">
-                <img src="assets/IMG_20240822_153135_526.jpg" alt="Photo 3">
-                <img src="assets/IMG_20241216_200939_544.jpg" alt="Photo 4">
-                <img src="assets/IMG_20241218_123943_269.jpg" alt="Photo 5">
-                <img src="assets/IMG_20250316_220448_565.jpg" alt="Photo 6">
-                <img src="assets/IMG_20250317_152628_134.jpg" alt="Photo 7">
-                <img src="assets/IMG_20250318_162015.jpg" alt="Photo 8">
-                <img src="assets/IMG_20250329_235235_469.jpg" alt="Photo 9">
-            </div>
-        </section>
+      <section
+        class="about hidden"
+        style="background: linear-gradient(to right, #e9f5e9, #d4edda);"
+      >
+        <h2>About Us</h2>
+        <p>
+          Welcome to the world of Chtaak Londe! We are a group of inseparable
+          friends who share laughter, adventures, and countless memories. This
+          page is dedicated to celebrating our bond and the moments that make
+          life special.
+        </p>
+      </section>
+      <section id="photo-gallery">
+        <h2>Photo Gallery</h2>
+        <div class="image-gallery">
+          <img src="assets/IMG-20241130-WA0024.jpg" alt="Photo 2" />
+          <img src="assets/IMG_20240822_153135_526.jpg" alt="Photo 3" />
+          <img src="assets/IMG_20241216_200939_544.jpg" alt="Photo 4" />
+          <img src="assets/IMG_20241218_123943_269.jpg" alt="Photo 5" />
+          <img src="assets/IMG_20250316_220448_565.jpg" alt="Photo 6" />
+          <img src="assets/IMG_20250317_152628_134.jpg" alt="Photo 7" />
+          <img src="assets/IMG_20250318_162015.jpg" alt="Photo 8" />
+          <img src="assets/IMG_20250329_235235_469.jpg" alt="Photo 9" />
+        </div>
+      </section>
     </main>
     <footer>
-    <button id="back-to-top">↑</button>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // GSAP animation for hero section
-            gsap.from('.banner-content h1', { duration: 1.5, y: -50, opacity: 0, ease: 'power3.out' });
-            gsap.from('.banner-content blockquote', { duration: 1.5, y: 50, opacity: 0, delay: 0.5, ease: 'power3.out' });
+      <button id="back-to-top">↑</button>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          // GSAP animation for hero section
+          gsap.from(".banner-content h1", {
+            duration: 1.5,
+            y: -50,
+            opacity: 0,
+            ease: "power3.out",
+          });
+          gsap.from(".banner-content blockquote", {
+            duration: 1.5,
+            y: 50,
+            opacity: 0,
+            delay: 0.5,
+            ease: "power3.out",
+          });
 
-            // Glowing button effect
-            const buttons = document.querySelectorAll('button');
-            buttons.forEach(button => {
-                button.addEventListener('mouseenter', () => {
-                    gsap.to(button, { boxShadow: '0 0 20px #56ab2f', duration: 0.3 });
-                });
-                button.addEventListener('mouseleave', () => {
-                    gsap.to(button, { boxShadow: 'none', duration: 0.3 });
-                });
+          // Glowing button effect
+          const buttons = document.querySelectorAll("button");
+          buttons.forEach((button) => {
+            button.addEventListener("mouseenter", () => {
+              gsap.to(button, { boxShadow: "0 0 20px #56ab2f", duration: 0.3 });
             });
+            button.addEventListener("mouseleave", () => {
+              gsap.to(button, { boxShadow: "none", duration: 0.3 });
+            });
+          });
         });
-        document.addEventListener('DOMContentLoaded', () => {
-            // Fade-out banner and fade-in about section
-            setTimeout(() => {
-                const banner = document.querySelector('.banner');
-                const aboutSection = document.querySelector('.about');
+        document.addEventListener("DOMContentLoaded", () => {
+          // Fade-out banner and fade-in about section
+          setTimeout(() => {
+            const banner = document.querySelector(".banner");
+            const aboutSection = document.querySelector(".about");
 
-                if (banner) {
-                    banner.classList.add('hidden');
+            if (banner) {
+              banner.classList.add("hidden");
+            }
+
+            if (aboutSection) {
+              aboutSection.classList.add("visible");
+            }
+          }, 3000); // 3 seconds
+
+          // Add smooth scrolling for internal links
+          const links = document.querySelectorAll('a[href^="#"]');
+          links.forEach((link) => {
+            link.addEventListener("click", (e) => {
+              e.preventDefault();
+              const target = document.querySelector(link.getAttribute("href"));
+              if (target) {
+                target.scrollIntoView({ behavior: "smooth" });
+              }
+            });
+          });
+
+          // Add parallax effect to the banner
+          window.addEventListener("scroll", () => {
+            const banner = document.querySelector(".banner");
+            if (banner) {
+              const scrollPosition = window.scrollY;
+              banner.style.transform = `translateY(${scrollPosition * 0.5}px)`;
+            }
+          });
+
+          // Add hover animations to gallery images
+          const galleryImages = document.querySelectorAll(".image-gallery img");
+          galleryImages.forEach((img) => {
+            img.addEventListener("mouseenter", () => {
+              img.style.transform = "scale(1.2) rotate(5deg)";
+              img.style.transition = "transform 0.3s ease";
+            });
+            img.addEventListener("mouseleave", () => {
+              img.style.transform = "scale(1) rotate(0deg)";
+            });
+          });
+
+          // Add fade-in effect on scroll
+          const sections = document.querySelectorAll("section");
+
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add("visible");
                 }
+              });
+            },
+            { threshold: 0.1 }
+          );
 
-                if (aboutSection) {
-                    aboutSection.classList.add('visible');
-                }
-            }, 3000); // 3 seconds
-
-            // Add smooth scrolling for internal links
-            const links = document.querySelectorAll('a[href^="#"]');
-            links.forEach(link => {
-                link.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const target = document.querySelector(link.getAttribute('href'));
-                    if (target) {
-                        target.scrollIntoView({ behavior: 'smooth' });
-                    }
-                });
-            });
-
-            // Add parallax effect to the banner
-            window.addEventListener('scroll', () => {
-                const banner = document.querySelector('.banner');
-                if (banner) {
-                    const scrollPosition = window.scrollY;
-                    banner.style.transform = `translateY(${scrollPosition * 0.5}px)`;
-                }
-            });
-
-            // Add hover animations to gallery images
-            const galleryImages = document.querySelectorAll('.image-gallery img');
-            galleryImages.forEach(img => {
-                img.addEventListener('mouseenter', () => {
-                    img.style.transform = 'scale(1.2) rotate(5deg)';
-                    img.style.transition = 'transform 0.3s ease';
-                });
-                img.addEventListener('mouseleave', () => {
-                    img.style.transform = 'scale(1) rotate(0deg)';
-                });
-            });
-
-            // Add fade-in effect on scroll
-            const sections = document.querySelectorAll('section');
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, { threshold: 0.1 });
-
-            sections.forEach(section => {
-                section.classList.add('fade-in');
-                observer.observe(section);
-            });
+          sections.forEach((section) => {
+            section.classList.add("fade-in");
+            observer.observe(section);
+          });
         });
-        document.addEventListener('DOMContentLoaded', () => {
-            console.log('Welcome to My Dear Bunnu!');
+        document.addEventListener("DOMContentLoaded", () => {
+          console.log("Welcome to My Dear Bunnu!");
         });
         /* Added interactive starfield with parallax, custom cursor, floating hearts, and an Easter egg that displays a hidden message after 5 clicks. */
-        document.addEventListener('DOMContentLoaded', () => {
-            // Generate stars
-            const starContainer = document.createElement('div');
-            starContainer.classList.add('stars');
-            document.body.appendChild(starContainer);
+        document.addEventListener("DOMContentLoaded", () => {
+          // Generate stars
+          const starContainer = document.createElement("div");
+          starContainer.classList.add("stars");
+          document.body.appendChild(starContainer);
 
-            for (let i = 0; i < 100; i++) {
-                const star = document.createElement('div');
-                star.classList.add('star');
-                star.style.top = `${Math.random() * 100}%`;
-                star.style.left = `${Math.random() * 100}%`;
-                star.style.animationDuration = `${Math.random() * 5 + 3}s`;
-                star.style.animationDelay = `${Math.random() * 5}s`;
-                starContainer.appendChild(star);
+          for (let i = 0; i < 100; i++) {
+            const star = document.createElement("div");
+            star.classList.add("star");
+            star.style.top = `${Math.random() * 100}%`;
+            star.style.left = `${Math.random() * 100}%`;
+            star.style.animationDuration = `${Math.random() * 5 + 3}s`;
+            star.style.animationDelay = `${Math.random() * 5}s`;
+            starContainer.appendChild(star);
+          }
+
+          // Floating hearts
+          for (let i = 0; i < 20; i++) {
+            const heart = document.createElement("div");
+            heart.classList.add("heart");
+            heart.style.top = `${Math.random() * 100}%`;
+            heart.style.left = `${Math.random() * 100}%`;
+            heart.style.animationDuration = `${Math.random() * 3 + 2}s`;
+            document.body.appendChild(heart);
+          }
+
+          // Easter egg
+          let clickCount = 0;
+          const hiddenMessage = document.createElement("div");
+          hiddenMessage.classList.add("hidden-message");
+          hiddenMessage.textContent = "You found the hidden message! ❤️";
+          document.body.appendChild(hiddenMessage);
+
+          document.body.addEventListener("click", () => {
+            clickCount++;
+            if (clickCount === 5) {
+              hiddenMessage.style.display = "block";
+              setTimeout(() => {
+                hiddenMessage.style.display = "none";
+              }, 3000);
             }
-
-            // Floating hearts
-            for (let i = 0; i < 20; i++) {
-                const heart = document.createElement('div');
-                heart.classList.add('heart');
-                heart.style.top = `${Math.random() * 100}%`;
-                heart.style.left = `${Math.random() * 100}%`;
-                heart.style.animationDuration = `${Math.random() * 3 + 2}s`;
-                document.body.appendChild(heart);
-            }
-
-            // Easter egg
-            let clickCount = 0;
-            const hiddenMessage = document.createElement('div');
-            hiddenMessage.classList.add('hidden-message');
-            hiddenMessage.textContent = 'You found the hidden message! ❤️';
-            document.body.appendChild(hiddenMessage);
-
-            document.body.addEventListener('click', () => {
-                clickCount++;
-                if (clickCount === 5) {
-                    hiddenMessage.style.display = 'block';
-                    setTimeout(() => {
-                        hiddenMessage.style.display = 'none';
-                    }, 3000);
-                }
-            });
+          });
         });
         // Scroll Indicator
-        const scrollIndicator = document.getElementById('scroll-indicator');
-        window.addEventListener('scroll', () => {
-            const maxScroll = document.body.scrollHeight - window.innerHeight;
-            const percentage = (window.scrollY / maxScroll) * 100;
-            scrollIndicator.style.width = `${percentage}%`;
+        const scrollIndicator = document.getElementById("scroll-indicator");
+        window.addEventListener("scroll", () => {
+          const maxScroll = document.body.scrollHeight - window.innerHeight;
+          const percentage = (window.scrollY / maxScroll) * 100;
+          scrollIndicator.style.width = `${percentage}%`;
         });
 
         // Back to Top Button
-        const backToTopButton = document.getElementById('back-to-top');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                backToTopButton.style.display = 'flex';
-            } else {
-                backToTopButton.style.display = 'none';
-            }
+        const backToTopButton = document.getElementById("back-to-top");
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 300) {
+            backToTopButton.style.display = "flex";
+          } else {
+            backToTopButton.style.display = "none";
+          }
         });
 
-        backToTopButton.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+        backToTopButton.addEventListener("click", () => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
         });
 
         // Dynamic Quote Section
-        const quotes = [  
-            '“You are my sun, my moon, and all my stars.”',
-            '“Every love story is beautiful, but ours is my favorite.”',
-            '“You are the best thing that ever happened to me.”'
+        const quotes = [
+          "“You are my sun, my moon, and all my stars.”",
+          "“Every love story is beautiful, but ours is my favorite.”",
+          "“You are the best thing that ever happened to me.”",
         ];
-        const quoteElement = document.querySelector('.quote');
+        const quoteElement = document.querySelector(".quote");
         let quoteIndex = 0;
 
         setInterval(() => {
-            quoteIndex = (quoteIndex + 1) % quotes.length;
-            quoteElement.textContent = quotes[quoteIndex];
+          quoteIndex = (quoteIndex + 1) % quotes.length;
+          quoteElement.textContent = quotes[quoteIndex];
         }, 5000);
 
-        document.addEventListener('DOMContentLoaded', () => {
-            const hamburger = document.querySelector('.hamburger');
-            const navLinks = document.querySelectorAll('.navbar a');
+        document.addEventListener("DOMContentLoaded", () => {
+          const hamburger = document.querySelector(".hamburger");
+          const navLinks = document.querySelectorAll(".navbar a");
 
-            hamburger.addEventListener('click', () => {
-                navLinks.forEach(link => {
-                    link.style.display = link.style.display === 'block' ? 'none' : 'block';
-                });
+          hamburger.addEventListener("click", () => {
+            navLinks.forEach((link) => {
+              link.style.display = link.style.display === "block" ? "none" : "block";
             });
+          });
         });
-    </script>
-</body>
+      </script>
+    </footer>
+  </body>
 </html>
-
