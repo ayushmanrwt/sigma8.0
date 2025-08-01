@@ -510,6 +510,9 @@
     <div id="scroll-indicator"></div>
     <!-- Removed navbar hamburger menu, video gallery section, footer quote, and hidden message Easter egg as per user request -->
     <div class="navbar">
+        <a href="#about">About</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
     </div>
     <main>
         <section class="about hidden" style="background: linear-gradient(to right, #e9f5e9, #d4edda);">
@@ -668,25 +671,6 @@
             const percentage = (window.scrollY / maxScroll) * 100;
             scrollIndicator.style.width = `${percentage}%`;
         });
-        /* Lazy Loading for Images - Disabled to fix image visibility issue
-        const galleryImages = document.querySelectorAll('.image-gallery img');
-        const imageObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const img = entry.target;
-                    img.src = img.dataset.src;
-                    img.classList.add('lazy-loaded');
-                    observer.unobserve(img);
-                }
-            });
-        });
-
-        galleryImages.forEach(img => {
-            img.dataset.src = img.src;
-            img.src = '';
-            imageObserver.observe(img);
-        });
-        */
 
         // Back to Top Button
         const backToTopButton = document.getElementById('back-to-top');
