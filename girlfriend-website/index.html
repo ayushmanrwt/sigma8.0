@@ -19,8 +19,9 @@
         }
 
         footer {
-            background: linear-gradient(to right, #a1c4fd, #c2e9fb); /* Cool gradient */
-            color: #333; /* Darker text for readability */
+            background: linear-gradient(to right, #ff9a9e, #fad0c4); /* Light pink gradient */
+            color: white;
+            font-size: 1rem;
         }
 
         /* Section Backgrounds */
@@ -327,72 +328,60 @@
             margin-top: 1rem;
             line-height: 1.5;
         }
-        /* Added interactive starfield with parallax effect */
-        body {
-            perspective: 1000px; /* Enable 3D perspective */
-            background: #000; /* Black background for star visibility */
-            overflow: hidden; /* Prevent scrollbars */
-        }
-
-        .stars {
-            position: absolute;
+        /* 3D Animated Background */
+        .animated-background {
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            overflow: hidden;
             z-index: -1;
+            overflow: hidden;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
         }
 
-        .star {
+        .animated-background .cube {
             position: absolute;
-            width: 2px;
-            height: 2px;
-            background: white;
-            border-radius: 50%;
-            animation: twinkling 5s infinite ease-in-out;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            animation: float 10s infinite ease-in-out;
         }
 
-        @keyframes twinkling {
-            0% { transform: translateZ(0) rotate(0deg); opacity: 1; }
-            50% { transform: translateZ(500px) rotate(180deg); opacity: 0.5; }
-            100% { transform: translateZ(0) rotate(360deg); opacity: 1; }
-        }
-
-        /* Custom cursor */
-        body {
-            cursor: url('assets/custom-cursor.png'), auto; /* Replace with your custom cursor image */
-        }
-
-        /* Floating hearts */
         @keyframes float {
-            0% { transform: translateY(0); opacity: 1; }
-            50% { transform: translateY(-20px); opacity: 0.8; }
-            100% { transform: translateY(0); opacity: 1; }
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-50px) rotate(180deg);
+            }
+            100% {
+                transform: translateY(0) rotate(360deg);
+            }
         }
-
-        .heart {
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background: red;
-            clip-path: polygon(50% 0%, 100% 35%, 80% 100%, 50% 80%, 20% 100%, 0% 35%);
-            animation: float 3s infinite ease-in-out;
-        }
-
-        /* Easter egg */
-        .hidden-message {
-            display: none;
+        /* 3D Video Background */
+        .video-background {
             position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .video-background video {
+            position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%);
-            background: rgba(0, 0, 0, 0.8);
-            color: white;
-            padding: 2rem;
-            border-radius: 10px;
-            text-align: center;
-            z-index: 1000;
+            transform: translate(-50%, -50%) scale(1.2);
+            width: 100%;
+            height: auto;
+            min-width: 100%;
+            min-height: 100%;
+            object-fit: cover;
+            filter: blur(3px) brightness(0.7);
         }
     </style>
 </head>
@@ -409,6 +398,7 @@
             </div>
         </div>
     </header>
+    <div id="scroll-indicator"></div>
     <main>
         <section class="about hidden">
             <h2>About Sagarika</h2>
@@ -448,6 +438,7 @@
         <p>Made with endless love and care by Ashu</p>
         <p>“In you, I’ve found the love of my life and my closest, truest friend.”</p>
     </footer>
+    <button id="back-to-top">↑</button>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             // Fade-out banner and fade-in about section
@@ -560,6 +551,59 @@
                 }
             });
         });
+        // Scroll Indicator
+        const scrollIndicator = document.getElementById('scroll-indicator');
+        window.addEventListener('scroll', () => {
+            const maxScroll = document.body.scrollHeight - window.innerHeight;
+            const percentage = (window.scrollY / maxScroll) * 100;
+            scrollIndicator.style.width = `${percentage}%`;
+        });
+        // Lazy Loading for Images
+        const galleryImages = document.querySelectorAll('.image-gallery img');
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    img.classList.add('lazy-loaded');
+                    observer.unobserve(img);
+                }
+            });
+        });
+
+        galleryImages.forEach(img => {
+            img.dataset.src = img.src;
+            img.src = '';
+            imageObserver.observe(img);
+        });
+
+        // Back to Top Button
+        const backToTopButton = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.style.display = 'flex';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Dynamic Quote Section
+        const quotes = [
+            '“You are my sun, my moon, and all my stars.”',
+            '“Every love story is beautiful, but ours is my favorite.”',
+            '“You are the best thing that ever happened to me.”'
+        ];
+        const quoteElement = document.querySelector('.quote');
+        let quoteIndex = 0;
+
+        setInterval(() => {
+            quoteIndex = (quoteIndex + 1) % quotes.length;
+            quoteElement.textContent = quotes[quoteIndex];
+        }, 5000);
     </script>
 </body>
 </html>
