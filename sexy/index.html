@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Chtaak Londe</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
@@ -187,6 +187,37 @@
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
             margin-top: 1rem;
             line-height: 1.5;
+        }
+    }
+
+        @media (max-width: 768px) {
+            .banner {
+                padding: 1.5rem;
+                max-width: 95%;
+            }
+            .banner h1 {
+                font-size: 2.5rem;
+            }
+            .banner blockquote.quote {
+                font-size: 1.2rem;
+            }
+            .banner video {
+                height: auto;
+            }
+            .video-gallery video.animated-video {
+                width: 100%;
+                height: auto;
+            }
+            main {
+                margin: 1rem;
+                padding: 1rem;
+            }
+            .navbar a {
+                display: none;
+            }
+            .hamburger {
+                display: flex;
+            }
         }
         @keyframes fadeIn {
             from { opacity: 0; }
